@@ -22,7 +22,7 @@ public class RegisterServlet extends HttpServlet {
 
         // Проверяем, если имя пользователя уже существует
         if (UserRepository.users.containsKey(username)) {
-            resp.getWriter().write("<h3>Пользователь с таким именем уже существует.</h3>");
+            resp.getWriter().write("<h3>A user with that name already exists.</h3>");
             return;
         }
 
@@ -30,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
         UserRepository.users.put(username, password);
 
         // Сообщаем пользователю об успешной регистрации
-        resp.getWriter().write("<h3>Регистрация успешна! Теперь вы можете войти в систему.</h3>");
-        resp.getWriter().write("<a href='login.html'>Перейти к логину</a>");
+        resp.getWriter().write("<h3>Registration is successful! You can now log in.</h3>");
+        resp.getWriter().write("<a href='login.html'>Go to login</a>");
     }
 }
